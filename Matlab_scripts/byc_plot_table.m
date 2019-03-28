@@ -26,6 +26,7 @@ savefig([fig_folder 'signal_band_pass'])
 
 %% showing peaks and other cycle markers
 figure
+h(1)=subplot(5,1,1);
 plot(time_s , signal_low_mat)
 hold on
 plot( time_s(result_table.sample_peak+1) , signal_low_mat(result_table.sample_peak+1),'bx')
@@ -35,6 +36,24 @@ plot( time_s(result_table.sample_zerox_rise+1) , signal_low_mat(result_table.sam
 legend({'BP signal','sample peak','sample through','mid decay','mid rise'})
 title('BP signal and peaks, valleys, decays and rise')
 xlabel('Time [s]')
+
+h(2)=subplot(5,1,2);
+plot( time_s(result_table.sample_peak+1) , result_table.amp_consistency,'b')
+title('amp consistency')
+
+h(3)=subplot(5,1,3);
+plot( time_s(result_table.sample_peak+1) , result_table.amp_fraction,'b')
+title('amp fraction')
+
+h(4)=subplot(5,1,4);
+plot( time_s(result_table.sample_peak+1) , result_table.period_consistency,'b')
+title('period consistency')
+
+h(5)=subplot(5,1,5);
+plot( time_s(result_table.sample_peak+1) , result_table.monotonicity,'b')
+title('monotonicity')
+
+linkaxes(h,'x')
 savefig([fig_folder 'band_pass_peaks'])
 
 %% showing comparison between times

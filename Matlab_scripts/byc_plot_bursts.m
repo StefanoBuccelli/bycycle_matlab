@@ -30,9 +30,52 @@ end
 savefig([fig_folder 'histogram_burst_cycle_prob'])
 
 %%
+figure
+h(1)=subplot(5,1,1);
+plot(time_s , signal_low_mat)
+hold on
+colors=['r','g','m','y'];
+molt=[1.1 1.2 1.3 1.4];
+for curr_comp=1:length(param.amplitude_consistency_threshold)
+    burst_pos=find(is_burst_comb(:,curr_comp));
+    plot( time_s(result_table.sample_peak(burst_pos)+1) , is_burst_comb(burst_pos,curr_comp).*nanmean(signal_low_mat)*molt(curr_comp),[colors(curr_comp) 'x'])
+end
+legend('BP signal','param 1','param 2','param 3','param 4','param 5')
+xlabel('Time [s]')
 
+h(2)=subplot(5,1,2);
+plot( time_s(result_table.sample_peak+1) , result_table.amp_consistency,'b')
+hold on
+for curr_comp=1:length(param.amplitude_consistency_threshold)
+    plot([0 time_s(end)] , [param.amplitude_consistency_threshold(curr_comp) param.amplitude_consistency_threshold(curr_comp)],colors(curr_comp))
+end
+title('amp consistency')
 
+h(3)=subplot(5,1,3);
+plot( time_s(result_table.sample_peak+1) , result_table.amp_fraction,'b')
+hold on
+for curr_comp=1:length(param.amplitude_consistency_threshold)
+    plot([0 time_s(end)] , [param.amplitude_fraction_threshold(curr_comp) param.amplitude_fraction_threshold(curr_comp)],colors(curr_comp))
+end
+title('amp fraction')
 
+h(4)=subplot(5,1,4);
+plot( time_s(result_table.sample_peak+1) , result_table.period_consistency,'b')
+hold on
+for curr_comp=1:length(param.amplitude_consistency_threshold)
+    plot([0 time_s(end)] , [param.period_consistency_threshold(curr_comp) param.period_consistency_threshold(curr_comp)],colors(curr_comp))
+end
+title('period consistency')
+
+h(5)=subplot(5,1,5);
+plot( time_s(result_table.sample_peak+1) , result_table.monotonicity,'b')
+hold on
+for curr_comp=1:length(param.amplitude_consistency_threshold)
+    plot([0 time_s(end)] , [param.monotonicity_threshold(curr_comp) param.monotonicity_threshold(curr_comp)],colors(curr_comp))
+end
+title('monotonicity')
+
+linkaxes(h,'x')
 
 
 

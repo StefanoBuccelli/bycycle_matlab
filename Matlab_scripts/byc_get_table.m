@@ -20,7 +20,7 @@ fs_mat = DownSampleFreq;
 % time_s=(1:1:60*fs_mat)/fs_mat; % 60 seconds
 % signal=sin(2*pi*14*time_s).*100+(rand(size(time_s))-0.5)*5; 
 
-signal=lfp;
+signal=lfp-mean(lfp);
 time_s=(1:1:length(signal))/fs_mat; 
 
 %% moving to python

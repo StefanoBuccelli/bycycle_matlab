@@ -22,7 +22,7 @@ load([data_result_folder 'results'])
 % 'param.monotonicity_threshold',.8,
 % 'param.N_cycles_min',3
 
-param.amplitude_fraction_threshold=[0 0 0 0];
+param.amplitude_fraction_threshold=[0.5 0.5 0.5 0.5];
 param.amplitude_consistency_threshold=[0.4 0.4 0.4 0.4];
 param.period_consistency_threshold=[.5 .5 .5 .5];
 param.monotonicity_threshold=[.8 .8 .8 .8];
