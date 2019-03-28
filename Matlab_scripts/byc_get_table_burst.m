@@ -3,12 +3,14 @@ clc
 close all
 
 data_result_folder='C:\Users\BuccelliLab\Documents\GitHub\bycycle_matlab\Results\Results_mat\';
+
 %% creating sine wave (sampled at 1kHz), freq = 14Hz
 fs_mat = 1e3;     
 time_s=(1:1:60*fs_mat)/fs_mat; % 60 seconds
 signal=sin(2*pi*14*time_s).*100+(rand(size(time_s))-0.5)*5; 
 % signal=a;
 % time_s=(1:1:length(signal))/fs_mat; % 60 seconds
+
 %% moving to python
 signal_py = py.numpy.array(signal);
 frequency_limits=[12,20];

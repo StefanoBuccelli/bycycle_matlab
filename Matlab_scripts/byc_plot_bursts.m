@@ -1,3 +1,5 @@
+%% this script plots some of the features related to burst detection with different parameters
+
 clear
 close all
 clc
