@@ -4,8 +4,15 @@ clear
 close all
 clc
 
-data_result_folder='C:\Users\BuccelliLab\Documents\GitHub\bycycle_matlab\Results\Results_mat\';
-fig_folder='C:\Users\BuccelliLab\Documents\GitHub\bycycle_matlab\Results\Results_fig\';
+% Change the current folder to the folder of this m-file.
+if(~isdeployed)
+  cd(fileparts(which(mfilename)));
+end
+cd ..
+
+data_result_folder='Results\Results_mat\';
+fig_folder='Results\Results_fig\';
+
 load([data_result_folder 'results'])
 
 %% burst no burst cycle
