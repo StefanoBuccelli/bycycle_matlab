@@ -41,7 +41,7 @@ for curr_comp=1:length(param.amplitude_consistency_threshold)
     plot( time_s(result_table.sample_peak(burst_pos)+1) , is_burst_comb(burst_pos,curr_comp).*nanmean(signal_low_mat)*molt(curr_comp),[colors(curr_comp) 'x'])
 end
 legend('BP signal','param 1','param 2','param 3','param 4','param 5')
-xlabel('Time [s]')
+
 
 h(2)=subplot(5,1,2);
 plot( time_s(result_table.sample_peak+1) , result_table.amp_consistency,'b')
@@ -74,8 +74,11 @@ for curr_comp=1:length(param.amplitude_consistency_threshold)
     plot([0 time_s(end)] , [param.monotonicity_threshold(curr_comp) param.monotonicity_threshold(curr_comp)],colors(curr_comp))
 end
 title('monotonicity')
+xlabel('Time [s]')
 
 linkaxes(h,'x')
+linkaxes(h(2:5),'xy') 
+savefig([fig_folder 'signal_bursts_comb_and_params'])
 
 
 
