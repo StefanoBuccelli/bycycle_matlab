@@ -4,6 +4,9 @@ The goal of this small repo is to use the Cycle-by-cycle analysis of neural osci
 
 A couple of slides to report the main outputs of this repo can be found [here](https://docs.google.com/presentation/d/1f_hgb8_cTH3FcLqAoRaLXrtmsiLkl_r8F2XAZn-bmzk/edit?usp=sharing). 
 
+**Note: first you need to install the original bycycle python code to be able to use the matlab code of this repo.**
+
+
 ### Data
 Contains a sample lfp recording
 
