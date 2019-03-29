@@ -40,6 +40,7 @@ for curr_comp=1:length(param.amplitude_consistency_threshold)
     burst_pos=find(is_burst_comb(:,curr_comp));
     plot( time_s(result_table.sample_peak(burst_pos)+1) , is_burst_comb(burst_pos,curr_comp).*nanmean(signal_low_mat)*molt(curr_comp),[colors(curr_comp) 'x'])
 end
+title('BP signal and bursts detected for different params')
 legend('BP signal','param 1','param 2','param 3','param 4','param 5')
 
 
