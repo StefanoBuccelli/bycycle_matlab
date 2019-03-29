@@ -1,6 +1,6 @@
 # bycycle_matlab
 
-The goal of this small repo is to use the Cycle-by-cycle analysis of neural oscillations in Matlab. Original code[https://github.com/bycycle-tools/bycycle], [paper](https://www.biorxiv.org/content/biorxiv/early/2018/04/16/302000.full.pdf). 
+The goal of this small repo is to use the Cycle-by-cycle analysis of neural oscillations in Matlab. Original [code](https://github.com/bycycle-tools/bycycle), [paper](https://www.biorxiv.org/content/biorxiv/early/2018/04/16/302000.full.pdf). 
 
 A couple of slides to report the main outputs can be found [here](https://docs.google.com/presentation/d/1f_hgb8_cTH3FcLqAoRaLXrtmsiLkl_r8F2XAZn-bmzk/edit?usp=sharing). 
 
